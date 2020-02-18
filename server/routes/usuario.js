@@ -4,7 +4,12 @@ const bcrypt= require('bcryptjs');
 const _ = require('underscore');
 const app = express();
 const Usuario = require('../models/usuario');
-
+app.get('/',function (req, resp ) {
+  req.json({
+    ok: true,
+    message: 'Api funcionando'
+  });
+})
 app.get('/usuario', function (req, res) { //1
   
   let desde = req.query.desde || 0;
