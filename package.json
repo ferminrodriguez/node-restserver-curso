@@ -1,7 +1,7 @@
 {
   "name": "07-restserver",
   "version": "1.0.0",
-  "description": "",
+  "description": "```\r npm install\r ```\r ## Recordar hacer comando",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,15 @@
     "mongoose": "^5.8.11",
     "mongoose-unique-validator": "^2.0.3",
     "underscore": "^1.9.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferminrodriguez/node-restserver-curso.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ferminrodriguez/node-restserver-curso/issues"
+  },
+  "homepage": "https://github.com/ferminrodriguez/node-restserver-curso#readme",
+  "keywords": []
 }

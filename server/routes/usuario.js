@@ -9,7 +9,7 @@ app.get('/usuario', function (req, res) { //1
   
   let desde = req.query.desde || 0;
   desde= Number(desde);
-  console.log(req.query);
+  //console.log(req.query);
 
   let estado = {estado: true}
   let limite = req.query.limite || 5;
