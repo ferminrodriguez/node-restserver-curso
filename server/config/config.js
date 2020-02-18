@@ -19,5 +19,7 @@ let urlDB;
  } else {
      urlDB=process.env.MONGO_URI;
  }
- //console.log(process.env.NODE_ENV);
+ //*/urlDB='mongodb+srv://ferminr:aYJHKjADRmIRXyz@bancalmongodb-1mku3.mongodb.net/bancalmongoosedb';
+ //mongodb+srv://ferminr:aYJHKjADRmIRXyz@bancalmongodb-1mku3.mongodb.net/bancalmongoosedb';
+ console.log(process.env.NODE_ENV);
  process.env.URLDB=urlDB;

@@ -1,6 +1,7 @@
 
 require ('./config/config');
 const express = require('express');
+var cors = require('cors')
 
 const app = express();
 
@@ -9,7 +10,7 @@ const mongoose   = require('mongoose');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
- 
+app.use(cors());
 // parse application/json
 app.use(bodyParser.json());
 app.use( require('./routes/usuario') );
