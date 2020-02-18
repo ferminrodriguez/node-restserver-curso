@@ -5,7 +5,7 @@ const _ = require('underscore');
 const app = express();
 const Usuario = require('../models/usuario');
 app.get('/',function (req, resp ) {
-  req.json({
+  resp.json({
     ok: true,
     message: 'Api funcionando'
   });
