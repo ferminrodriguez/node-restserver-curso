@@ -10,7 +10,7 @@ app.get('/',function (req, resp ) {
     message: 'Api funcionando'
   });
 })
-app.get('/usuario', function (req, res) { //1
+app.get('/usuario', function (req, res) { 
   
   let desde = req.query.desde || 0;
   desde= Number(desde);
@@ -24,26 +24,26 @@ app.get('/usuario', function (req, res) { //1
     .skip(desde)
     .limit(limite)
     .sort({nombre: 'asc'})
-    .exec( (err, usuarios) => { //2
+    .exec( (err, usuarios) => { 
       if (err) {
             
-        return res.status(400).json({ //I3
+        return res.status(400).json({ 
             ok: false,
             err
           }); //F3
         } 
     //usuarioDB.password=null;
-    Usuario.count({estado},(err, conteo) => {  //I4
-      res.json({  //I5
+    Usuario.count({estado},(err, conteo) => {
+      res.json({
         ok: true,
         usuarios,
         registros: conteo
-        }); //F5
-      }); //F4
+        }); 
+      });
 
-    });//F2
+    });
 
-}); //F1
+}); 
 
   
   app.post('/usuario', function (req, res) {
