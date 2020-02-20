@@ -2,16 +2,20 @@ const express = require('express');
 
 const bcrypt= require('bcryptjs');
 const _ = require('underscore');
+
+const { verificaToken,verifica_ADMINROLE } = require('../middlewares/autenticacion');
+
 const app = express();
 const Usuario = require('../models/usuario');
+
 app.get('/',function (req, resp ) {
   resp.json({
     ok: true,
     message: 'Api funcionando'
   });
 })
-app.get('/usuario', function (req, res) { 
-  
+app.get('/usuario', verificaToken, (req, res) =>{ 
+  return res.json({ usuario: req.usuario});
   let desde = req.query.desde || 0;
   desde= Number(desde);
   //console.log(req.query);
@@ -45,7 +49,7 @@ app.get('/usuario', function (req, res) {
 
 }); 
   
-  app.post('/usuario', function (req, res) {
+  app.post('/usuario', verificaToken, (req, res) =>{
       let body = req.body;
       let usuario = new Usuario({
           nombre: body.nombre,
@@ -70,7 +74,7 @@ app.get('/usuario', function (req, res) {
       });
     });
   
-    app.put('/usuario/:id', function (req, res) {
+    app.put('/usuario/:id', [verificaToken,verifica_ADMINROLE], (req, res) => {
       let id = req.params.id;
       let body = _.pick(req.body,['nombre','email','estado','img','role']);
 
@@ -92,7 +96,7 @@ app.get('/usuario', function (req, res) {
       
     });
 
-    app.delete('/usuario/:id', function (req, res) {
+    app.delete('/usuario/:id', [verificaToken,verifica_ADMINROLE],  (req, res) => {
       let id = req.params.id;
       //let body = _.pick(req.body,['nombre','email','estado','img','role']);
       let cambiaestado = {

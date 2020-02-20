@@ -9,6 +9,21 @@
  //=================
  process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
  
+
+ //===============================
+ //     FECHA DE EXPIRACION TOKEN
+ //===============================
+ // 60 SEGUNDOS
+ // 60 MUNUTOS
+ // 24 HORAS
+ // 30 DIAS
+ process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+ //===============================
+ //     SEED DE AUTENTICACION (SEMILLA)
+ //===============================
+    process.env.SEED = process.env.SEED || 'este-es-el-sec-desarrolo';
+
  //============
  // Base de datos
  //============
@@ -21,5 +36,5 @@ let urlDB;
  }
  //*/urlDB='mongodb+srv://ferminr:aYJHKjADRmIRXyz@bancalmongodb-1mku3.mongodb.net/bancalmongoosedb';
  //mongodb+srv://ferminr:aYJHKjADRmIRXyz@bancalmongodb-1mku3.mongodb.net/bancalmongoosedb';
- console.log(process.env.NODE_ENV);
+ //console.log(process.env.NODE_ENV);
  process.env.URLDB=urlDB;
