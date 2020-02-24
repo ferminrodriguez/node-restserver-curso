@@ -4,7 +4,7 @@ const express = require('express');
 var cors = require('cors')
 
 const app = express();
-
+const path = require('path');
 const bodyParser= require('body-parser');
 const mongoose   = require('mongoose');
 
@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors());
 // parse application/json
 app.use(bodyParser.json());
-
+//Habilitar carpeta public///
+app.use(express.static(path.resolve(__dirname, '../public')));
 //configuracion global de rutas
 app.use( require('./routes/index') );
 

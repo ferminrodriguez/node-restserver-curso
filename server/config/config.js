@@ -38,3 +38,7 @@ let urlDB;
  //mongodb+srv://ferminr:aYJHKjADRmIRXyz@bancalmongodb-1mku3.mongodb.net/bancalmongoosedb';
  //console.log(process.env.NODE_ENV);
  process.env.URLDB=urlDB;
+
+ ///****** Google Client ID*****//
+//=============================//
+process.env.CLIENT_ID = process.env.CLIENT_ID || '1035253371589-el2ii4amqnudpqn43c7eotskpmcdm1fa.apps.googleusercontent.com';
